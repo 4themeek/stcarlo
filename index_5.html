@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlo Acutis — The First Millennial Saint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FAF6F0;
+    --cream-dim:#F1EAE0;
+    --charcoal:#2A2622;
+    --burgundy:#8B1A1A;
+    --burgundy-deep:#5E1010;
+    --gold:#C9A84C;
+    --gold-soft:#E4D3A0;
+    --sage:#6E8F72;
+    --ink-panel:#141210;
+    --rule: rgba(42,38,34,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:'Source Serif Pro', Georgia, serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .mono{font-family:'JetBrains Mono', monospace; letter-spacing:0.02em;}
+  a{color:inherit;}
+
+  .wrap{max-width:880px; margin:0 auto; padding:0 28px;}
+
+  /* ================= HERO ================= */
+  .hero{
+    padding:56px 0 40px;
+    text-align:center;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.14) 0%, rgba(201,168,76,0) 55%),
+      var(--cream);
+  }
+
+  .eyebrow{
+    display:inline-block;
+    font-size:12.5px;
+    color:var(--burgundy);
+    background:rgba(139,26,26,0.07);
+    border:1px solid rgba(139,26,26,0.25);
+    padding:6px 14px;
+    border-radius:3px;
+    margin-bottom:28px;
+  }
+  .eyebrow::before{content:"// ";color:var(--sage);}
+
+  /* --- hero art card: houses the uploaded square portrait (550x550) --- */
+  .hero-art-card{
+    width:320px;
+    max-width:66vw;
+    margin:0 auto 34px;
+    background:#000;
+    padding:10px;
+    border-radius:50%;
+    border:1px solid rgba(201,168,76,0.4);
+    box-shadow:0 24px 60px rgba(20,18,16,0.28), 0 2px 10px rgba(20,18,16,0.18);
+  }
+  .hero-art-card img{
+    display:block;
+    width:100%;
+    height:auto;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:50%;
+  }
+
+  h1.name{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:clamp(40px, 7.5vw, 68px);
+    margin:0 0 8px;
+    color:var(--charcoal);
+    letter-spacing:-0.01em;
+  }
+
+  .name-sub{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(16px, 3vw, 21px);
+    color:var(--burgundy);
+    margin:0 0 36px;
+  }
+
+  .facts-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px 0;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:#5c574f;
+  }
+  .facts-row span{padding:0 16px;}
+  .facts-row span:not(:last-child){border-right:1px solid var(--rule);}
+  .facts-row b{color:var(--charcoal); font-weight:600;}
+
+  /* ================= CALLED TO BE SAINTS ================= */
+  .calling-section{
+    padding:8px 0 64px;
+    text-align:center;
+  }
+  .calling-kicker{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:clamp(19px, 2.6vw, 23px);
+    color:var(--charcoal);
+    max-width:560px;
+    margin:0 auto 22px;
+    line-height:1.5;
+  }
+  .calling-quote-wrap{
+    max-width:600px;
+    margin:0 auto 22px;
+    padding:26px 30px;
+    border-top:1px solid var(--gold);
+    border-bottom:1px solid var(--gold);
+  }
+  .calling-quote{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:clamp(21px, 3.4vw, 28px);
+    color:var(--burgundy);
+    line-height:1.4;
+    margin:0;
+  }
+  .calling-note{
+    font-size:14.5px;
+    color:#5c574f;
+    max-width:520px;
+    margin:0 auto;
+    line-height:1.7;
+  }
+  .calling-note b{color:var(--charcoal);}
+
+  /* ================= PULL QUOTE ================= */
+  .pullquote-section{
+    background:var(--burgundy);
+    color:var(--cream);
+    padding:70px 0;
+    text-align:center;
+  }
+  .pullquote{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-weight:500;
+    font-size:clamp(25px, 4.2vw, 38px);
+    max-width:720px;
+    margin:0 auto;
+    line-height:1.35;
+  }
+  .pullquote-attr{
+    margin-top:20px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--gold-soft);
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+  }
+
+  /* ================= SECTION HEADS ================= */
+  section{padding:74px 0;}
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:38px;
+  }
+  .section-head .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12px;
+    color:var(--sage);
+    white-space:nowrap;
+  }
+  .section-head h2{
+    font-family:'Playfair Display', serif;
+    font-size:clamp(25px,4vw,33px);
+    font-weight:600;
+    margin:0;
+    color:var(--charcoal);
+  }
+  .section-head .line{flex:1; height:1px; background:var(--rule);}
+
+  /* ================= TIMELINE ================= */
+  .timeline{
+    border-left:2px solid var(--gold);
+    margin-left:6px;
+    padding-left:28px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+  }
+  .tl-item{position:relative;}
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-33.5px;
+    top:5px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:var(--burgundy);
+    border:2px solid var(--cream);
+    box-shadow:0 0 0 1px var(--gold);
+  }
+  .tl-date{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--burgundy);
+    font-weight:700;
+    margin-bottom:4px;
+  }
+  .tl-text{font-size:16.5px; color:#3a352f;}
+
+  /* ================= THE PREDICTION (terminal block) ================= */
+  .prediction-section{background:var(--cream-dim);}
+  .terminal{
+    background:var(--ink-panel);
+    border-radius:10px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(20,18,16,0.28);
+    max-width:640px;
+    margin:0 auto;
+  }
+  .terminal-bar{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 14px;
+    background:#0d0b09;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
+  .dot.r{background:#E0625B;}
+  .dot.y{background:#E8B75E;}
+  .dot.g{background:var(--sage);}
+  .terminal-bar .fname{
+    margin-left:8px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px;
+    color:#9a948a;
+  }
+  .terminal-body{
+    padding:30px 28px 32px;
+    font-family:'JetBrains Mono', monospace;
+    color:#EDE7DA;
+    font-size:14.5px;
+  }
+  .terminal-body .prompt{color:var(--sage);}
+  .terminal-body .comment{color:#8a8378;}
+  .terminal-line{margin-bottom:14px;}
+  .terminal-quote{
+    color:var(--gold-soft);
+    font-size:17px;
+    line-height:1.6;
+    display:block;
+    margin:16px 0;
+    padding-left:14px;
+    border-left:2px solid var(--gold);
+  }
+  .prediction-note{
+    max-width:640px;
+    margin:24px auto 0;
+    text-align:center;
+    font-size:15px;
+    color:#5c574f;
+  }
+  .prediction-note b{color:var(--burgundy);}
+
+  /* ================= WEBSITES ================= */
+  .site-cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:18px;
+  }
+  .site-card{
+    background:#fff;
+    border:1px solid var(--rule);
+    border-radius:8px;
+    padding:22px 22px 20px;
+    text-decoration:none;
+    display:block;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .site-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 28px rgba(42,38,34,0.1);
+    border-color:var(--gold);
+  }
+  .site-card .mono-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--sage);
+    margin-bottom:10px;
+    display:block;
+  }
+  .site-card h3{
+    font-family:'Playfair Display', serif;
+    font-size:19px;
+    margin:0 0 8px;
+    color:var(--charcoal);
+  }
+  .site-card p{font-size:14px; color:#5c574f; margin:0 0 14px;}
+  .site-card .url{
+    font-family:'JetBrains Mono', monospace;
+    font-size:12.5px;
+    color:var(--burgundy);
+    word-break:break-all;
+  }
+  .site-card .url::after{content:" →";}
+
+  /* ================= QUOTES GRID ================= */
+  .quotes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
+  }
+  .quote-card{
+    padding:26px 24px;
+    background:#fff;
+    border-left:3px solid var(--gold);
+    border-radius:2px;
+  }
+  .quote-card p.q{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:18px;
+    margin:0 0 10px;
+    color:var(--charcoal);
+    line-height:1.45;
+  }
+  .quote-card p.q::before{content:"\201C";}
+  .quote-card p.q::after{content:"\201D";}
+  .quote-card .who{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    color:var(--sage);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+
+  /* ================= BROUGHT TO YOU BY ================= */
+  .credit-section{
+    padding:50px 0 54px;
+    text-align:center;
+    background:var(--cream);
+    border-top:1px solid var(--rule);
+  }
+  .credit-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:14px;
+    color:var(--sage);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-bottom:16px;
+  }
+  .credit-name{
+    font-family:'Playfair Display', serif;
+    font-weight:600;
+    font-size:22px;
+    color:var(--charcoal);
+    margin:0 0 8px;
+  }
+  .credit-parishes{
+    font-size:15px;
+    color:#5c574f;
+    margin:0 0 4px;
+  }
+  .credit-location{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:12.5px;
+    color:#8a8378;
+    margin:0 0 16px;
+  }
+  .credit-link{
+    display:inline-block;
+    font-family:'JetBrains Mono', monospace;
+    font-size:13px;
+    color:var(--burgundy);
+    text-decoration:none;
+    border-bottom:1px solid rgba(139,26,26,0.35);
+    padding-bottom:2px;
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .credit-link:hover{
+    color:var(--burgundy-deep);
+    border-color:var(--burgundy-deep);
+  }
+
+  /* ================= FOOTER ================= */
+  footer{
+    background:var(--charcoal);
+    color:var(--cream-dim);
+    padding:50px 0 32px;
+    text-align:center;
+  }
+  footer .feast{
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    font-size:20px;
+    color:var(--gold-soft);
+    margin-bottom:10px;
+  }
+  footer .fine{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11.5px;
+    color:#8f897d;
+  }
+
+  @media (max-width:560px){
+    section{padding:54px 0;}
+    .facts-row span{padding:0 10px; font-size:11.5px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow mono">the first millennial saint</span>
+
+      <div class="hero-art-card">
+        <img src="stcarlo-hero-square.png" alt="Saint Carlo Acutis, portrait with halo">
+      </div>
+
+      <h1 class="name">Carlo Acutis</h1>
+      <p class="name-sub">"To live as an original, not a photocopy."</p>
+
+      <div class="facts-row">
+        <span><b>Born</b> London, 1991</span>
+        <span><b>Died</b> Milan, 2006 &mdash; age 15</span>
+        <span><b>Beatified</b> 2020</span>
+        <span><b>Canonized</b> Sept 7, 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CALLED TO BE SAINTS ================= -->
+  <section class="calling-section">
+    <div class="wrap">
+      <p class="calling-kicker">We are all called to become saints. This one lived among us &mdash; in jeans and sneakers, one hour of video games a week, ordinary school days like anyone else's.</p>
+      <div class="calling-quote-wrap">
+        <p class="calling-quote">"The only thing we have to ask God for in prayer is the desire to be holy."</p>
+      </div>
+      <p class="calling-note">
+        Carlo's mother, <b>Antonia Salzano Acutis</b>, is still alive today &mdash; traveling the world to tell people about her son, and about the Jesus he never stopped talking about.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= PULL QUOTE ================= -->
+  <section class="pullquote-section">
+    <div class="wrap">
+      <p class="pullquote">"My secret is to contact Jesus every day."</p>
+      <p class="pullquote-attr">Carlo Acutis &mdash; daily Mass, from age seven onward</p>
+    </div>
+  </section>
+
+  <!-- ================= LIFE ================= -->
+  <section id="life">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag mono">01</span>
+        <h2>A Short, Extraordinary Life</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-date">1991</div>
+          <div class="tl-text">Born in London on May 3 to Italian parents; baptized weeks later, then raised in Milan.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">age 7</div>
+          <div class="tl-text">Asks for early First Communion &mdash; an unusual request granted after the parish priest questions him and finds him ready. Begins daily Mass, a habit he never breaks.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">age 12&ndash;14</div>
+          <div class="tl-text">Becomes a catechist to his peers; teaches himself computer programming and web design; builds websites for his parish and school.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2004&ndash;2006</div>
+          <div class="tl-text">Spends over two years building a website cataloging more than 150 Eucharistic miracles worldwide, in nearly 20 languages &mdash; publicly unveiled October 4, 2006, days before his death.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Oct 12, 2006</div>
+          <div class="tl-text">Dies of an aggressive leukemia at age 15, ten days after falling ill. Buried, at his own request, in Assisi.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">2020</div>
+          <div class="tl-text">Beatified in Assisi after a Brazilian boy's healing is recognized as a miracle attributed to his intercession.</div>
+        </div>
+        <div class="tl-item">
+          <div class="tl-date">Sept 7, 2025</div>
+          <div class="tl-text">Canonized by Pope Leo XIV &mdash; the Church's first millennial saint.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= THE PREDICTION ================= -->
+  <section class="prediction-section">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag mono">02</span>
+        <h2>The Prediction</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="fname">testament.mov &mdash; found on desktop</span>
+        </div>
+        <div class="terminal-body">
+          <div class="terminal-line"><span class="comment">// recorded by Carlo in Assisi, three months before his death</span></div>
+          <div class="terminal-line"><span class="prompt">&gt;</span> playing recovered file...</div>
+          <span class="terminal-quote">"When I reach 70 kilos, I am destined to die."</span>
+          <div class="terminal-line"><span class="comment">// 70kg &asymp; 154 lbs &mdash; his exact weight at death</span></div>
+        </div>
+      </div>
+
+      <p class="prediction-note">
+        Days after Carlo's funeral, his mother Antonia woke to a voice saying <b>"Testament."</b>
+        Searching his room, she found nothing written &mdash; but on his computer, the instrument he used most,
+        she discovered a short video he had filmed alone three months earlier. He looked calmly at the sky
+        and named the exact weight he would be when he died. He was.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= WEBSITES ================= -->
+  <section id="websites">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag mono">03</span>
+        <h2>His Websites &mdash; Still Online</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="site-cards">
+        <a class="site-card" href="https://www.miracolieucaristici.org" target="_blank" rel="noopener">
+          <span class="mono-label">EXHIBITION</span>
+          <h3>Eucharistic Miracles</h3>
+          <p>150+ miracles cataloged by country and date, in nearly 20 languages, with maps and a virtual museum.</p>
+          <span class="url">miracolieucaristici.org</span>
+        </a>
+        <a class="site-card" href="https://www.themarianapparitions.org" target="_blank" rel="noopener">
+          <span class="mono-label">EXHIBITION</span>
+          <h3>Marian Apparitions</h3>
+          <p>A worldwide catalog of Church-recognized apparitions of Our Lady, the companion project to his Eucharistic site.</p>
+          <span class="url">themarianapparitions.org</span>
+        </a>
+        <a class="site-card" href="https://www.carloacutis.com" target="_blank" rel="noopener">
+          <span class="mono-label">OFFICIAL</span>
+          <h3>Associazione Carlo Acutis</h3>
+          <p>His official archive &mdash; timeline, phrases, tomb, and materials for parishes wanting to host his exhibitions.</p>
+          <span class="url">carloacutis.com</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= QUOTES ================= -->
+  <section id="quotes" style="background:var(--cream-dim);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag mono">04</span>
+        <h2>In His Own Words</h2>
+        <div class="line"></div>
+      </div>
+
+      <div class="quotes-grid">
+        <div class="quote-card">
+          <p class="q">The Virgin Mary is the only woman in my life.</p>
+          <span class="who">on devotion to mary</span>
+        </div>
+        <div class="quote-card">
+          <p class="q">Sadness is the gaze turned toward oneself; happiness is the gaze turned toward God.</p>
+          <span class="who">on conversion</span>
+        </div>
+        <div class="quote-card">
+          <p class="q">The Eucharist is my highway to Heaven.</p>
+          <span class="who">on the eucharist</span>
+        </div>
+        <div class="quote-card">
+          <p class="q">All people are born originals, but many die as photocopies.</p>
+          <span class="who">on living authentically</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BROUGHT TO YOU BY ================= -->
+  <div class="credit-section">
+    <div class="wrap">
+      <p class="credit-label">brought to you by</p>
+      <p class="credit-name">The Saint Carlo Acutis Family of Catholic Parishes</p>
+      <p class="credit-parishes">St. Michael's &middot; St. Gabriel &middot; St. John's West Chester</p>
+      <p class="credit-location">Sharonville, Glendale and West Chester, Ohio</p>
+      <a class="credit-link" href="https://www.stcarlocincy.org" target="_blank" rel="noopener">www.stcarlocincy.org</a>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="wrap">
+      <p class="feast">Feast Day &mdash; October 12</p>
+      <p class="fine mono">Saint Carlo Acutis &middot; 1991&ndash;2006 &middot; patron of the internet, computer programmers &amp; youth</p>
+    </div>
+  </footer>
+
+</body>
+</html>
